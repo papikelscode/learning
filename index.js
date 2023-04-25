@@ -23,11 +23,13 @@ app.post("/sendFakeMail", (req, res) => {
   let msg = req.body.msgMail;
 
   let mailTransporter = nodemailer.createTransport({
-    host: "host_address",
-    port: PORT_NUMBER,
+    service: "Gmail",
+      secure: true,
     auth: {
-      user: "username@domain.com",
-      pass: "Password",
+
+      // this section you will add the client email address best advice it should be a fake account and the password to the app
+      user: "emailaccount ",
+      pass: "app password",
     },
   });
 
